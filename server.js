@@ -3,6 +3,8 @@ import { dbConnection } from "./databaseConnection/dbConnection.js";
 import projectRouter from "./src/modules/project/project.router.js";
 import * as dotenv from "dotenv";
 import cors from 'cors';
+import profileRouter from "./src/modules/profile/profile.router.js";
+import certificateRouter from "./src/modules/certificate/certificate.router.js";
 dotenv.config()
 const app = express();
 
@@ -12,6 +14,10 @@ app.use(express.json());
 
  app.use(express.static("uploads"));
 app.use("/projects", projectRouter);
+app.use("/profiles", profileRouter);
+app.use("/certificates", certificateRouter);
+
+
 app.get("/", (req, res) => {
   res.send("Hello world");
 });

@@ -15,10 +15,20 @@ const getAllProjects = catchAsyncError(async (req,res) =>{
   res.json({message:'success',result})
 })
 
+
+const updateProject = catchAsyncError(async(req,res,next)=>{
+  const {id} = req.params;
+  let result = await projectModel.findByIdAndUpdate(id,req.body,{new:true});
+  !result && next('problem updating')
+  result && res.json({message:"success",result})
+})
+
 const deleteProject = catchAsyncError(async (req,res,next)=>{
   const {id} = req.params;
   let result = await projectModel.findByIdAndDelete(id);
   !result && next('not Found')
   result && res.json({message:'success',result})
 })
-export { createProject,getAllProjects, deleteProject };
+
+
+export { createProject,getAllProjects, deleteProject ,updateProject};

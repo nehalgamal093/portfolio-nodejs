@@ -21,5 +21,7 @@ let options = (folderName) =>{
     }
     return multer({storage,fileFilter});
 }
+export const uploadSingleFile = (fieldName,folderName) => 
+options(folderName).single(fieldName)
 export const uploadMixOfFiles = (arrayOfFields,folderName) =>
 options(folderName).fields(arrayOfFields)
