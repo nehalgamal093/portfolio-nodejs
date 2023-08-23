@@ -15,5 +15,5 @@ projectRouter
 projectRouter
   .route("/:id")
   .delete(project.deleteProject)
-  .put(project.updateProject);
+  .put(project.updateProject).get(project.getProject);
 export default projectRouter;

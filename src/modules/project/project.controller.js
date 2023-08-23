@@ -14,7 +14,11 @@ const getAllProjects = catchAsyncError(async (req,res) =>{
   let result = await projectModel.find({})
   res.json({message:'success',result})
 })
-
+const getProject = catchAsyncError(async (req,res)=>{
+  const {id} = req.params;
+  let result = await projectModel.findById(id);
+  result && res.json({message:"success",result})
+})
 
 const updateProject = catchAsyncError(async(req,res,next)=>{
   const {id} = req.params;
@@ -31,4 +35,4 @@ const deleteProject = catchAsyncError(async (req,res,next)=>{
 })
 
 
-export { createProject,getAllProjects, deleteProject ,updateProject};
+export { createProject,getAllProjects, deleteProject ,updateProject,getProject};

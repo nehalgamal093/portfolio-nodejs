@@ -16,6 +16,8 @@ const getAllProfile = catchAsyncError(async (req,res) =>{
 })
 
 
+
+
 const updateProfile = catchAsyncError(async(req,res,next)=>{
   const {id} = req.params;
   let result = await profileModel.findByIdAndUpdate(id,req.body,{new:true});
