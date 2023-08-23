@@ -24,6 +24,6 @@ app.get("/", (req, res) => {
 
 dbConnection();
 
-app.listen(port, () => {
+app.listen(port, "0.0.0.0", () => {
   console.log("Connected successfully");
 });
