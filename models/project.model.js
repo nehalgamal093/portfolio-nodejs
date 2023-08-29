@@ -40,9 +40,9 @@ const projectSchema = mongoose.Schema(
   },
   { timestamps: true }
 );
-projectSchema.post("init", (doc) => {
-  doc.images = doc.images.map(
-    (path) => "https://ginger-nono-qwar.vercel.app" + "/project/" + path
-  );
-});
+// projectSchema.post("init", (doc) => {
+//   doc.images = doc.images.map(
+//     (path) => "https://ginger-nono-qwar.vercel.app" + "/project/" + path
+//   );
+// });
 export const projectModel = mongoose.model("project", projectSchema);
