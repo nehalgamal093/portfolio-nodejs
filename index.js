@@ -12,7 +12,7 @@ const port = 3001;
 app.use(cors())
 app.use(express.json());
 
- app.use(express.static("uploads"));
+ app.use(express.static("public"));
 app.use("/projects", projectRouter);
 app.use("/profiles", profileRouter);
 app.use("/certificates", certificateRouter);

@@ -6,7 +6,7 @@
         "use": "@vercel/node"
       },
       {
-        "src": "uploads/**",
+        "src": "public/**",
         "use": "@vercel/static"
     } 
     ],
@@ -18,7 +18,7 @@
       },
       {
         "src": "/(.+\\.[a-z]+)$",
-        "dest": "uploads/$1"
+        "dest": "public/$1"
     } 
     ]
   }
