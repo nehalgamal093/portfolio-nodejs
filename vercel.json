@@ -14,10 +14,10 @@
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "/"
+        "dest": "/index.js"
       },
       {
-        "src": "/(.+)",
+        "src": "/(.+\\.[a-z]+)$",
         "dest": "uploads/$1"
     } 
     ]
