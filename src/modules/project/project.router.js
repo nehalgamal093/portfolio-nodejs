@@ -4,7 +4,7 @@ import { uploadMixOfFiles } from "../middleware/fileUpload.js";
 
 const projectRouter = express.Router();
 
-// let fieldsArray = [{ name: "images", maxCount: 10 }];
+let fieldsArray = [{ name: "images", maxCount: 10 }];
 
 projectRouter
   .route("/")
