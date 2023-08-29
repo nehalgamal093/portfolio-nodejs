@@ -42,7 +42,7 @@ const projectSchema = mongoose.Schema(
 );
 projectSchema.post("init", (doc) => {
   doc.images = doc.images.map(
-    (path) => process.env.DBURL + "/project/" + path
+    (path) => "https://ginger-nono-qwar.vercel.app" + "/project/" + path
   );
 });
 export const projectModel = mongoose.model("project", projectSchema);
