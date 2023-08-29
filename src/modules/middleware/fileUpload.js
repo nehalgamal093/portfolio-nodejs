@@ -4,8 +4,8 @@ import multer from 'multer';
 let options = (folderName) =>{
     const storage = multer.diskStorage({
         destination:function(req,file,cb){
-            cb(null,`${process.cwd()}/uploads/${folderName}`);
-            console.log("🚀 ~ file: upload.ts:11 ~ file", process.cwd());
+            cb(null,`uploads/${folderName}`);
+            console.log("🚀 ");
         },
         filename:function(req,file,cb){
             const uniqueSuffix = Date.now() + "-" +Math.round(Math.random() * 1e9);
