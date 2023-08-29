@@ -8,11 +8,11 @@ import certificateRouter from "./src/modules/certificate/certificate.router.js";
 dotenv.config()
 const app = express();
 
-// const port = 3001;
+const port = 3001;
 app.use(cors())
 app.use(express.json());
 
- app.use(express.static(__dirname));
+ app.use(express.static("uploads"));
 app.use("/projects", projectRouter);
 app.use("/profiles", profileRouter);
 app.use("/certificates", certificateRouter);
@@ -24,7 +24,7 @@ app.get("/", (req, res) => {
 
 dbConnection();
 
-app.listen("0.0.0.0", () => {
+app.listen(port,"0.0.0.0", () => {
   console.log("Connected successfully");
 });
 
