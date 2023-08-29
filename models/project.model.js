@@ -42,7 +42,7 @@ const projectSchema = mongoose.Schema(
 );
 projectSchema.post("init", (doc) => {
   doc.images = doc.images.map(
-    (path) => "https://portfolio-nodejs-qwar-8lzkkgju8-nehalgamal093.vercel.app" + "/project/" + path
+    (path) => process.env.DBURL + "/project/" + path
   );
 });
 export const projectModel = mongoose.model("project", projectSchema);

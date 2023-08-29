@@ -8,7 +8,7 @@ let fieldsArray = [{ name: "images", maxCount: 10 }];
 
 projectRouter
   .route("/")
-  .post( project.createProject)
+  .post(uploadMixOfFiles(fieldsArray,'project'), project.createProject)
   .get(project.getAllProjects);
 
 
