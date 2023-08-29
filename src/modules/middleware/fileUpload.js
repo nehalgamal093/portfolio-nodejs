@@ -5,6 +5,7 @@ let options = (folderName) =>{
     const storage = multer.diskStorage({
         destination:function(req,file,cb){
             cb(null,`uploads/${folderName}`);
+            console.log(`${process.env.BASEURL}`)
             console.log("🚀 ");
         },
         filename:function(req,file,cb){
