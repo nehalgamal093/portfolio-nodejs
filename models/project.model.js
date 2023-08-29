@@ -35,14 +35,14 @@ const projectSchema = mongoose.Schema(
       trim: "true",
       minLength: [10, "too short project description"],
     },
-    images: [String],
+    // images: [String],
     tags: [String],
   },
   { timestamps: true }
 );
-projectSchema.post("init", (doc) => {
-  doc.images = doc.images.map(
-    (path) => "https://portfolio-nodejs-qwar-8lzkkgju8-nehalgamal093.vercel.app" + "/project/" + path
-  );
-});
+// projectSchema.post("init", (doc) => {
+//   doc.images = doc.images.map(
+//     (path) => "https://portfolio-nodejs-qwar-8lzkkgju8-nehalgamal093.vercel.app" + "/project/" + path
+//   );
+// });
 export const projectModel = mongoose.model("project", projectSchema);
