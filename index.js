@@ -5,8 +5,6 @@ import * as dotenv from "dotenv";
 import cors from 'cors';
 import profileRouter from "./src/modules/profile/profile.router.js";
 import certificateRouter from "./src/modules/certificate/certificate.router.js";
-import * as path from 'path'
-
 dotenv.config()
 const app = express();
 
@@ -14,8 +12,7 @@ const port = 3001;
 app.use(cors())
 app.use(express.json());
 
-//  app.use(express.static("uploads"));
-app.use(express.static(path.dirname()));
+ app.use(express.static("uploads"));
 app.use("/projects", projectRouter);
 app.use("/profiles", profileRouter);
 app.use("/certificates", certificateRouter);
