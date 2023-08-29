@@ -1,5 +1,6 @@
 import multer from 'multer';
-const path = require('path');
+import * as path from 'path'
+
 
 let options = (folderName) =>{
     const storage = multer.diskStorage({

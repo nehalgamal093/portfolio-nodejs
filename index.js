@@ -5,9 +5,11 @@ import * as dotenv from "dotenv";
 import cors from 'cors';
 import profileRouter from "./src/modules/profile/profile.router.js";
 import certificateRouter from "./src/modules/certificate/certificate.router.js";
+import * as path from 'path'
+
 dotenv.config()
 const app = express();
-const path = require('path');
+
 const port = 3001;
 app.use(cors())
 app.use(express.json());
