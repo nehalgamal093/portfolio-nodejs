@@ -4,7 +4,7 @@ import path from 'path';
 let options = (folderName) =>{
     const storage = multer.diskStorage({
         destination:function(req,file,cb){
-            cb(null,process.cwd()+`${folderName}`);
+            cb(null, path.join(process.cwd(),folderName));
 
             // console.log(`🚀 ${process.cwd()} +${folderName}`);
         },
