@@ -7,7 +7,7 @@ const certificateRouter = express.Router();
 
 certificateRouter
   .route("/")
-  .post(uploadSingleFile('image','/static'), certificate.createcertificate)
+  .post(uploadSingleFile('image','/public'), certificate.createcertificate)
   .get(certificate.getAllCertificate);
 
 
