@@ -17,8 +17,8 @@
         "dest": "/index.js"
       },
       {
-        "src": "/(.+\\.[a-z]+)$",
-        "dest": "public"
+        "src": "/.*",
+        "dest": "/public"
     } 
     ]
   }
