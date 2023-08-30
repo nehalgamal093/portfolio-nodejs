@@ -44,7 +44,7 @@ const projectSchema = mongoose.Schema(
 projectSchema.post("init", (doc) => {
 
   doc.images = doc.images.map(
-    (path) => process.env.DBURL + path
+    (path) => process.env.BASEURL + path
    
   );
 });

@@ -51,7 +51,7 @@ const profileSchema = mongoose.Schema(
   { timestamps: true }
 );
 profileSchema.post("init", (doc) => {
-  doc.image = process.env.DBURL +  doc.image
+  doc.image = process.env.BASEURL +  doc.image
   
 });
 export const profileModel = mongoose.model("profile", profileSchema);
