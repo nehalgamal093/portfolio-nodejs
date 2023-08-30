@@ -6,13 +6,13 @@ let options = (folderName) =>{
         destination:function(req,file,cb){
             cb(null, path.join(process.cwd(),folderName));
 console.log('--------');
-            console.log(`🚀 ${process.cwd()}${folderName}`);
+            console.log(`🚀 CWD ${process.cwd()}${folderName}`);
             console.log('--------');
         },
         filename:function(req,file,cb){
             const uniqueSuffix = Date.now() + "-" +Math.round(Math.random() * 1e9);
             cb(null,uniqueSuffix+'-'+file.originalname);
-            console.log(`🚀 ${uniqueSuffix}`);
+            console.log(`🚀 SUFFIC ${uniqueSuffix+'-'+file.originalname}`);
         }
     })
 
