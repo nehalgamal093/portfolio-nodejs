@@ -4,9 +4,9 @@ import path from 'path';
 let options = (folderName) =>{
     const storage = multer.diskStorage({
         destination:function(req,file,cb){
-            cb(null,`${process.cwd()+folderName}`);
-            console.log(`${process.cwd()+folderName}`)
-            console.log("🚀 ");
+            cb(null,process.cwd()+`${folderName}`);
+
+            console.log(`🚀 ${process.cwd()} +${folderName}`);
         },
         filename:function(req,file,cb){
             const uniqueSuffix = Date.now() + "-" +Math.round(Math.random() * 1e9);
