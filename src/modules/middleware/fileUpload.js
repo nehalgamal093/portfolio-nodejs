@@ -1,11 +1,11 @@
 import multer from 'multer';
-
+import path from 'path';
 
 let options = (folderName) =>{
     const storage = multer.diskStorage({
         destination:function(req,file,cb){
-            cb(null,`public/${folderName}`);
-            // console.log(`${process.env.BASEURL}`)
+            cb(null,`${folderName}`);
+            console.log(`dirname${folderName}`)
             console.log("🚀 ");
         },
         filename:function(req,file,cb){

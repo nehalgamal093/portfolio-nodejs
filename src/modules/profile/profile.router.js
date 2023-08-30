@@ -8,7 +8,7 @@ const profileRouter = express.Router();
 
 profileRouter
   .route("/")
-  .post(uploadSingleFile('image','profile'),profile.createProfile)
+  .post(uploadSingleFile('image','public'),profile.createProfile)
   .get(profile.getAllProfile);
 
   

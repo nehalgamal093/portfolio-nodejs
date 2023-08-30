@@ -44,7 +44,7 @@ const projectSchema = mongoose.Schema(
 projectSchema.post("init", (doc) => {
   console.log(`Enviroment ${process.env.BASEURL}`)
   doc.images = doc.images.map(
-    (path) => process.env.BASEURL + "/project/" + path
+    (path) => process.env.BASEURL + path
   );
 });
 export const projectModel = mongoose.model("project", projectSchema);

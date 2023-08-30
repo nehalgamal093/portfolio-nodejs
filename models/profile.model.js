@@ -51,7 +51,7 @@ const profileSchema = mongoose.Schema(
   { timestamps: true }
 );
 profileSchema.post("init", (doc) => {
-  doc.image = "http://localhost:3000" + "/profile/" + doc.image
+  doc.image = "http://localhost:3000" +  doc.image
   
 });
 export const profileModel = mongoose.model("profile", profileSchema);
