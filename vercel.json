@@ -17,7 +17,7 @@
         "dest": "/index.js"
       },
       {
-        "src": "/static",
+        "src": "/(.+)$",
         "dest": "static/$1"
     } 
     ]
