@@ -7,6 +7,7 @@ let options = (folderName) =>{
             cb(null, path.join(process.cwd(),folderName));
 console.log('--------');
             console.log(`🚀 ${process.cwd()}${folderName}`);
+            console.log('--------');
         },
         filename:function(req,file,cb){
             const uniqueSuffix = Date.now() + "-" +Math.round(Math.random() * 1e9);
