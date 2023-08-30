@@ -5,7 +5,7 @@ let options = (folderName) =>{
     const storage = multer.diskStorage({
         destination:function(req,file,cb){
             cb(null, path.join(process.cwd(),folderName));
-
+console.log('--------');
             console.log(`🚀 ${process.cwd()}${folderName}`);
         },
         filename:function(req,file,cb){
