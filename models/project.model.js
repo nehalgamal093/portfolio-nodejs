@@ -42,9 +42,7 @@ const projectSchema = mongoose.Schema(
 );
 
 projectSchema.post("init", (doc) => {
-  console.log(` -----------`)
-  console.log(`Enviroment ${process.env.BASEURL}`)
-  console.log(` -----------`)
+
   doc.images = doc.images.map(
     (path) => process.env.BASEURL + path
    
