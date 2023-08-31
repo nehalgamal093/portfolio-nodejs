@@ -41,11 +41,11 @@ const projectSchema = mongoose.Schema(
   { timestamps: true }
 );
 
-projectSchema.post("init", (doc) => {
+// projectSchema.post("init", (doc) => {
 
-  doc.images = doc.images.map(
-    (path) => process.env.BASEURL + path
+//   doc.images = doc.images.map(
+//     (path) => process.env.BASEURL + path
    
-  );
-});
+//   );
+// });
 export const projectModel = mongoose.model("project", projectSchema);
