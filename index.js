@@ -5,13 +5,14 @@ import * as dotenv from "dotenv";
 import cors from 'cors';
 import profileRouter from "./src/modules/profile/profile.router.js";
 import certificateRouter from "./src/modules/certificate/certificate.router.js";
-
+import bodyParser from "body-parser";
 dotenv.config()
 const app = express();
 
 const port = 3001;
 app.use(cors())
 app.use(express.json());
+app.use(express.urlencoded({extended:false}))
 
 //  app.use(express.static('public'));
 app.use("/projects", projectRouter);

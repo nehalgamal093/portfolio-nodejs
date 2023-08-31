@@ -1,6 +1,10 @@
 import express from "express";
 import * as project from "./project.controller.js";
+import {imagesUpload} from '../middleware/imagesUpload.js';
 // import { uploadMixOfFiles } from "../middleware/fileUpload.js";
+
+
+
 
 const projectRouter = express.Router();
 
@@ -8,13 +12,14 @@ const projectRouter = express.Router();
 
 // projectRouter
 //   .route("/")
-//   .post(uploadMixOfFiles(fieldsArray,'/public'), project.createProject)
+//   .post(uploadMixOfFiles(fieldsArray), project.createProject)
 //   .get(project.getAllProjects);
 
 projectRouter
   .route("/")
-  .post(project.createProject)
+  .post(imagesUpload,project.createProject)
   .get(project.getAllProjects);
+
 projectRouter
   .route("/:id")
   .delete(project.deleteProject)

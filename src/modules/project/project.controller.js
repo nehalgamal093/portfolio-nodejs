@@ -1,12 +1,57 @@
 import { projectModel } from "../../../models/project.model.js";
 import { catchAsyncError } from "../middleware/catchAsyncError.js";
+import cloudinary from '../../../config/cloudinary.js';
+
 
 const createProject = catchAsyncError(
   async (req, res) => {
-    // req.body.images = req.files.images.map((obj)=>obj.filename)
-    let result = new projectModel(req.body);
-    await result.save();
-    res.json({ message: "success", result });
+
+   
+   if(req.body.title || (req.files && req.files.length > 0)){
+    try{
+      let images = null;
+  
+      if(req.files && req.files.length > 0){
+        images = [];
+        for(const file of req.files){
+          const {path} = file;
+    
+          images.push({
+            attachment_file:(await cloudinary.uploader.upload(path)).secure_url,
+            cloudinary_id: (await cloudinary.uploader.upload(path)).public_id
+          })
+        }
+      }
+      const newProject = new projectModel({
+        title:req.body.title,
+        description:req.body.description,
+        type:req.body.type,
+        tags:req.body.tags,
+        gitlink:req.body.gitlink,
+        googleplaylink:req.body.googleplaylink,
+        images:images,
+        imgCover:req.body.imgCover
+      })
+      const result = await newProject.save();
+      res.status(200).json({success:"Project created",result})
+    }catch(err){
+      console.log(err)
+    }
+ 
+   } else {
+    res.status(500).json({
+      errors:{
+        common:{
+          msg:"Couldn't create project"
+        }
+      }
+    })
+   }
+  
+    // // req.body.images = req.files.images.map((obj)=>obj.filename)
+    // let result = new projectModel(req.body);
+    // await result.save();
+    // res.json({ message: "success", result });
   }
 );
 

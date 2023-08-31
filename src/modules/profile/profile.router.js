@@ -1,7 +1,7 @@
 import express from "express";
 import * as profile from "./profile.controller.js";
 // import { uploadSingleFile } from "../middleware/fileUpload.js";
-
+import multer from "multer";
 const profileRouter = express.Router();
 
 

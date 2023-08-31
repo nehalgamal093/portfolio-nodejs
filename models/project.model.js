@@ -35,7 +35,10 @@ const projectSchema = mongoose.Schema(
       trim: "true",
       minLength: [10, "too short project description"],
     },
-    images: [String],
+    images: [{
+      attachment_file:String,
+      cloudinary_id:String
+    }],
     tags: [String],
   },
   { timestamps: true }
