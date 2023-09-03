@@ -4,13 +4,11 @@ const certificateSchema = mongoose.Schema(
   {
     
     image: String,
+    cloudinary_id:String
  
   },
   { timestamps: true }
 );
 
-// certificateSchema.post("init", (doc) => {
-//   doc.image = process.env.BASEURL  + doc.image
-  
-// });
+
 export const certificateModel = mongoose.model("certificate", certificateSchema);

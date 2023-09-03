@@ -46,7 +46,7 @@ const profileSchema = mongoose.Schema(
       minLength: [10, "too short downloadcv"],
     },
     image:String,
-
+    cloudinary_id:String
   },
   { timestamps: true }
 );

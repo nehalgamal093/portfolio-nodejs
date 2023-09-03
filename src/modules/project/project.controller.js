@@ -10,17 +10,19 @@ const createProject = catchAsyncError(
    if(req.body.title || (req.files && req.files.length > 0)){
     try{
       let images = null;
-  
+
       if(req.files && req.files.length > 0){
         images = [];
+    
         for(const file of req.files){
           const {path} = file;
-    
+         
           images.push({
             attachment_file:(await cloudinary.uploader.upload(path)).secure_url,
             cloudinary_id: (await cloudinary.uploader.upload(path)).public_id
           })
         }
+       
       }
       const newProject = new projectModel({
         title:req.body.title,
@@ -30,7 +32,7 @@ const createProject = catchAsyncError(
         gitlink:req.body.gitlink,
         googleplaylink:req.body.googleplaylink,
         images:images,
-        imgCover:req.body.imgCover
+       cover:images[0].attachment_file
       })
       const result = await newProject.save();
       res.status(200).json({success:"Project created",result})

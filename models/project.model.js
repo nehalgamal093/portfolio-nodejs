@@ -30,15 +30,11 @@ const projectSchema = mongoose.Schema(
       trim: "true",
       minLength: [10, "too short project description"],
     },
-    imgCover: {
-      type: String,
-      trim: "true",
-      minLength: [10, "too short project description"],
-    },
     images: [{
       attachment_file:String,
       cloudinary_id:String
     }],
+    cover:String,
     tags: [String],
   },
   { timestamps: true }
