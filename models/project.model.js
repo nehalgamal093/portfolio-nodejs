@@ -27,8 +27,8 @@ const projectSchema = mongoose.Schema(
     },
     googleplaylink: {
       type: String,
-      trim: "true",
-      minLength: [10, "too short project description"],
+
+      
     },
     images: [{
       attachment_file:String,
