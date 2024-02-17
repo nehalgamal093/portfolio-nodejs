@@ -8,12 +8,13 @@ import certificateRouter from "./src/modules/certificate/certificate.router.js";
 
 dotenv.config();
 const app = express();
+
+const port = 3001;
 const corsOptions = {
-  origin: "http://localhost:3000",
+  origin: "https://ginger-nono-qwar.vercel.app",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
-const port = 3001;
 app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
