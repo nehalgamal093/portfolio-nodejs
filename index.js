@@ -9,7 +9,7 @@ import certificateRouter from "./src/modules/certificate/certificate.router.js";
 dotenv.config();
 const app = express();
 const corsOptions = {
-  origin: "*",
+  origin: "http://localhost:3000",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
