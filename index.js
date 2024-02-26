@@ -11,10 +11,7 @@ const app = express();
 
 const port = 3001;
 const corsOptions = {
-  origin: [
-    "https://portfolio-panel-rho.vercel.app/",
-    "https://portfolio-react-phi-hazel.vercel.app/",
-  ],
+  origin: ["*"],
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
