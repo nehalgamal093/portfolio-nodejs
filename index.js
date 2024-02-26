@@ -11,7 +11,7 @@ const app = express();
 
 const port = 3001;
 const corsOptions = {
-  origin: ["*"],
+  origin: "*",
   credentials: true, //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 };
